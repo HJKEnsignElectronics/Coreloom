@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="rrxHrk0vRqMoWXWt7JmF5VqC3i5Q9XdxJRypKETbLh0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coreloom — HJKEnsignElectronics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero {
+            padding: 140px 0 90px;
+            text-align: center;
+        }
+
+        .hero-icons {
+            font-size: 32px;
+            margin-bottom: 25px;
+            letter-spacing: 12px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -3px;
+            background: linear-gradient(135deg, #ffffff 0%, #555555 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #888888;
+            margin-bottom: 35px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: 19px;
+            color: #999999;
+            max-width: 750px;
+            margin: 0 auto 45px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #ffffff;
+            color: #0a0a0a;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #333333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ffffff;
+            color: #0a0a0a;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #777777;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+        }
+
+        /* Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #111111;
+            border: 1px solid #222222;
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #444444;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.02);
+        }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .card p {
+            color: #888888;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #0d0d0d;
+            border-top: 1px solid #161616;
+            border-bottom: 1px solid #161616;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 18px;
+            color: #aaaaaa;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .disclaimer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #111111;
+            border: 1px solid #1a1a1a;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #555555;
+            letter-spacing: 0.5px;
+        }
+
+        /* Connect Section */
+        .connect {
+            text-align: center;
+            padding: 120px 0;
+            background: radial-gradient(circle at center, #111111 0%, #0a0a0a 100%);
+        }
+
+        .connect h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .connect p {
+            font-size: 18px;
+            color: #888888;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid #111111;
+        }
+
+        footer p {
+            color: #444444;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-icons">🕸️ ⚡ ⚛️</div>
+            <h1>CORELOOM</h1>
+            <p class="hero-subtitle">HJKEnsignElectronics</p>
+            <p class="hero-description">
+                A distributed compute virtualization engine built to map network-wide computational density 
+                into highly threaded logical units, breaking hardware bounds through isolated container scheduling.
+            </p>
+            <div class="cta-buttons">
+                <a href="#architecture" class="btn btn-primary">Architecture</a>
+                <a href="https://github.com/HJKEnsignElectronics/Coreloom" class="btn btn-secondary" target="_blank">View Repository</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about" id="architecture">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">The Coreloom Paradigm</h2>
+                <p>
+                    Coreloom dynamically abstracts node resource boundaries, transforming unified 
+                    network hardware capacity into scalable clusters. By calculating raw performance densities, 
+                    the engine synthesizes threaded virtual components ready to feed high-load processes.
+                </p>
+                <p>
+                    Operated securely through a strictly separated 6-module Python core layout, execution workflows 
+                    remain uncoupled from the visual frontends and infrastructure definitions.
+                </p>
+                <div class="disclaimer">
+                    CORELOOM WORKSPACE • DEPLOYED REPOSITORY AT HJKENSIGNELECTRONICS/CORELOOM
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The 6-Module Backend Matrix</h2>
+            <p class="section-description">
+                The Python system is completely constrained within exactly six explicit modules for micro-latency performance tracking.
+            </p>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🎛️</div>
+                    <h3>main.py</h3>
+                    <p>App context execution gateway. Handles network initializations, custom parameters configuration, and server bootstrapping protocols.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔐</div>
+                    <h3>auth.py</h3>
+                    <p>Local identity authority layer. Enforces strict local credential verification, signature encodings, and secure validation barriers.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🧱</div>
+                    <h3>models.py</h3>
+                    <p>Strict schema validations. Manages operational interface data typing rules using structured model tracking parameters.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📡</div>
+                    <h3>api.py</h3>
+                    <p>FastAPI connection router map. Exposes local network hooks and registers endpoint queries securely across runtime flows.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🧬</div>
+                    <h3>hardware.py</h3>
+                    <p>Virtualization cluster engine. Allocates nodes dynamically, tracks compute footprints, and hooks the Docker controller system.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>utils.py</h3>
+                    <p>Ecosystem data telemetry collector. Runs background stream performance updates, logging traces, and cert structures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section about">
+        <div class="container">
+            <h2 class="section-title">HJK-INC Strategic Integrations</h2>
+            <p class="section-description">
+                Coreloom functions as a computational backing infrastructure ready to link into adjacent research arrays.
+            </p>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">⚛️</div>
+                    <h3>HJK-QUANTUM</h3>
+                    <p>Providing the high-throughput matrix compute layer needed to handle quantum-inspired physics simulations and non-linear logic verification pipelines.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🧪</div>
+                    <h3>HJK-BIO-RB</h3>
+                    <p>Backbone cluster scheduling framework to stream heavy biological data structures and cellular simulation models seamlessly across local networks.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💎</div>
+                    <h3>ClathSQL Sovereign</h3>
+                    <p>Industrial processing support for ledger synchronization, automated transaction block updates, and local account infrastructure scaling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section connect">
+        <div class="container">
+            <h2>Access the Sovereign Hub</h2>
+            <p>
+                Review deep system documentation, structural deployment logs, and historical research matrices through our central portal.
+            </p>
+            <a href="https://hjk-inc.github.io" class="btn btn-primary" target="_blank">Explore hjk-inc.github.io →</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 HJKEnsignElectronics / HJK-INC. All rights reserved.</p>
+            <p style="margin-top: 12px; color: #333333; font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">
+                Coreloom Virtualization Node Pipeline
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+```
