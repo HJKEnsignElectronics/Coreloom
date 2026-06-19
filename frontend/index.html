@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreLoom - Resource Provisioning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Network Status -->
+        <div class="network-status">
+            <span id="statusIndicator" class="status-dot offline"></span>
+            <span id="statusText">Connecting to network...</span>
+        </div>
+
+        <!-- Login / Register Section -->
+        <div id="loginSection" class="login-section">
+            <h1>🔐 Node Authentication</h1>
+            <form id="authForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter node username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter access key" required>
+                </div>
+                <button type="submit" class="btn-primary" id="authBtn">Join Network</button>
+                <button type="button" class="btn-secondary" id="toggleAuthMode">Register New Node</button>
+            </form>
+            <div id="authStatus" class="status-message"></div>
+        </div>
+
+        <!-- Provisioning Section (Hidden until authenticated) -->
+        <div id="provisioningSection" class="provisioning-section" style="display: none;">
+            <div class="user-info">
+                <span id="userName" class="user-badge">👤 User</span>
+                <span id="connectionTime" class="connection-time">Connected: 0s</span>
+                <button class="btn-logout" id="logoutBtn">Leave Network</button>
+            </div>
+
+            <h2>⚡ Resource Synthesizer</h2>
+            <form id="resourceForm">
+                <div class="form-group">
+                    <label>Compute Density (Energy/Threads): <span id="computeValue" class="value-display">50%</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="compute" min="10" max="100" value="50">
+                    </div>
+                    <div class="usage-bar"><div id="computeBar" class="usage-fill cpu-color" style="width: 50%;"></div></div>
+                </div>
+
+                <div class="form-group">
+                    <label>ROM Allocation (Storage/Memory): <span id="romValue" class="value-display">50%</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="rom" min="10" max="100" value="50">
+                    </div>
+                    <div class="usage-bar"><div id="romBar" class="usage-fill rom-color" style="width: 50%;"></div></div>
+                </div>
+
+                <button type="submit" class="btn-primary" id="allocateBtn">Allocate Resources</button>
+            </form>
+            <div id="allocationStatus" class="status-message"></div>
+
+            <!-- Live Telemetry -->
+            <h3 style="margin-top: 25px;">📊 Live Telemetry</h3>
+            <div class="telemetry-grid">
+                <div class="telemetry-card">
+                    <span class="telemetry-label">CPU Load</span>
+                    <span id="telemetryCpu" class="telemetry-value">0%</span>
+                </div>
+                <div class="telemetry-card">
+                    <span class="telemetry-label">Memory</span>
+                    <span id="telemetryMem" class="telemetry-value">0%</span>
+                </div>
+                <div class="telemetry-card">
+                    <span class="telemetry-label">Thread Speed</span>
+                    <span id="telemetrySpeed" class="telemetry-value">0 MHz</span>
+                </div>
+            </div>
+            <div id="activeContainerInfo" style="text-align: center; margin-top: 10px; font-size: 0.85rem; color: #666;">
+                Active Container: <span id="containerIdDisplay">None</span>
+            </div>
+
+            <!-- Allocation History -->
+            <div class="allocations-history">
+                <h3>Allocation History</h3>
+                <div id="historyList" class="history-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+                                                               </html>
